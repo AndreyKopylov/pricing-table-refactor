@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { TableInfo } from './TableInfo'
 import { StagesBanner } from './StagesBanner'
-import { pricingTableData, modelsMap, stepsMap } from './pricingData'
+import { pricingTableData, modelsMap, stepsMap } from './generators/pricingData'
 import { Models, AccountSize } from '../types'
 
 function App() {
@@ -73,9 +73,6 @@ function App() {
               <TableInfo
                 roles={roles}
                 model={selectedModel}
-                modelsMap={modelsMap}
-                stepKey={stepKey}
-                accountSize={selectedAccountSize}
               />
             </div>
           </div>
@@ -83,11 +80,7 @@ function App() {
           <div style={{ marginBottom: '30px' }}>
             <h2>Stages Banner Component</h2>
             <div style={{ border: '1px solid #ddd', padding: '20px', borderRadius: '8px' }}>
-              <StagesBanner
-                  roles={roles}
-                  model={selectedModel}
-                  stepKey={stepKey}
-              />
+              <StagesBanner roles={roles} />
             </div>
           </div>
         </>
